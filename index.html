@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0d12">
+    <meta name="color-scheme" content="dark light">
+    <meta name="description" content="ZhangYang.Email — Youthful, agile, and freeform email. A beautiful, modern, and dynamic email experience for the open web.">
+    <meta property="og:title" content="ZhangYang.Email — Email, Unbound">
+    <meta property="og:description" content="Youthful, agile, and free — a stunning, dynamic email experience.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zhangyang.email/">
+    <meta property="og:image" content="/assets/icon.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZhangYang.Email — Email, Unbound">
+    <meta name="twitter:description" content="Youthful, agile, and free — a stunning, dynamic email experience.">
+    <meta name="twitter:image" content="/assets/icon.svg">
+    <link rel="canonical" href="https://zhangyang.email/">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="/assets/icon.svg" color="#7c3aed">
+    <link rel="apple-touch-icon" href="/assets/icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+    <title>ZhangYang.Email — Email, Unbound</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" aria-label="Primary">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="ZhangYang.Email Home">
+          <img class="brand-mark" src="/assets/logo.svg" alt="ZhangYang.Email logo" width="32" height="32">
+          <span class="brand-name">ZhangYang.Email</span>
+        </a>
+        <div class="nav-actions">
+          <a href="#playground" class="nav-link">Playground</a>
+          <a href="#features" class="nav-link">Features</a>
+          <a href="#pricing" class="nav-link">Pricing</a>
+          <a href="#stories" class="nav-link">Stories</a>
+          <div class="divider" role="separator" aria-hidden="true"></div>
+          <button id="themeToggle" class="button secondary" aria-label="Toggle theme">Theme</button>
+          <label class="accent-picker" title="Pick accent color">
+            <input id="accentInput" type="color" aria-label="Accent color" value="#7c3aed">
+          </label>
+          <a class="button primary" href="#cta">Get Access</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="home" class="hero">
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="hero-content container">
+          <h1 class="headline gradient-text">Email, Unbound</h1>
+          <p class="kicker">Youthful, agile, and free — a stunning, dynamic email experience for creators and doers.</p>
+          <div class="hero-cta">
+            <a class="button primary large" href="#playground">Launch Playground</a>
+            <button class="button ghost large" id="demoButton">Watch Demo</button>
+          </div>
+          <div class="hero-micro">
+            <div class="micro-item">Ultra-fast</div>
+            <div class="micro-item">Markdown-first</div>
+            <div class="micro-item">Privacy by design</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section features container">
+        <header class="section-header">
+          <h2 class="title">Make email your playground</h2>
+          <p class="subtitle">Powerful tools that feel like magic.</p>
+        </header>
+        <div class="feature-grid">
+          <article class="card tilt">
+            <h3>Live Markdown</h3>
+            <p>Compose in Markdown with instant preview and beautiful rendering.</p>
+          </article>
+          <article class="card tilt">
+            <h3>Command Palette</h3>
+            <p>Hit ⌘/Ctrl K to do anything fast — send, label, filter, and more.</p>
+          </article>
+          <article class="card tilt">
+            <h3>Flow State</h3>
+            <p>Smooth scrolling, subtle animations, and zero clutter design.</p>
+          </article>
+          <article class="card tilt">
+            <h3>Privacy First</h3>
+            <p>Trackers blocked by default. Your data stays yours.</p>
+          </article>
+          <article class="card tilt">
+            <h3>Offline Ready</h3>
+            <p>Compose and browse even when the network flakes out.</p>
+          </article>
+          <article class="card tilt">
+            <h3>Hackable</h3>
+            <p>Custom accents, shortcuts, and mini automations built-in.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="playground" class="section playground">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="title">Inbox Playground</h2>
+            <p class="subtitle">Try it. Type it. Ship it.</p>
+          </header>
+
+          <div class="workbench">
+            <aside class="pane pane-left" aria-label="Mailbox">
+              <div class="toolbar">
+                <input id="searchInput" class="input" type="search" placeholder="Search mail (from:me subject:demo)" aria-label="Search mail">
+                <button id="newMailBtn" class="button small">New</button>
+              </div>
+              <ul id="mailList" class="mail-list" role="listbox" aria-label="Messages"></ul>
+            </aside>
+
+            <section class="pane pane-right" aria-label="Message and composer">
+              <article id="reader" class="reader" aria-live="polite">
+                <header class="reader-header">
+                  <div>
+                    <h3 id="readerSubject">Welcome to ZhangYang.Email</h3>
+                    <div id="readerMeta" class="meta">From Team • Just now</div>
+                  </div>
+                  <div class="reader-actions">
+                    <button id="starBtn" class="icon-button" title="Star" aria-pressed="false">★</button>
+                    <button id="archiveBtn" class="icon-button" title="Archive">⤴</button>
+                    <button id="deleteBtn" class="icon-button" title="Delete">✕</button>
+                  </div>
+                </header>
+                <div id="readerBody" class="reader-body">
+                  <p>Pick a message on the left to preview it here.</p>
+                </div>
+              </article>
+
+              <section class="composer" aria-label="Composer">
+                <div class="composer-fields">
+                  <input id="toInput" class="input" type="email" placeholder="To" aria-label="To" autocomplete="email">
+                  <input id="subjectInput" class="input" type="text" placeholder="Subject" aria-label="Subject" autocomplete="off">
+                </div>
+                <div class="composer-editor">
+                  <textarea id="bodyInput" class="textarea" placeholder="Write in Markdown. Drag-and-drop files to attach." spellcheck="true"></textarea>
+                  <div id="preview" class="preview" aria-label="Markdown Preview"></div>
+                </div>
+                <div class="composer-footer">
+                  <div class="attachments" id="attachmentZone" aria-label="Attachments" tabindex="0">Drop files here</div>
+                  <div class="grow"></div>
+                  <button id="sendBtn" class="button primary">Send</button>
+                </div>
+              </section>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="stories" class="section testimonials container">
+        <header class="section-header">
+          <h2 class="title">People are vibing</h2>
+          <p class="subtitle">Notes from makers, students, and speedrunners.</p>
+        </header>
+        <div class="slider" aria-roledescription="carousel">
+          <button class="slider-nav prev" aria-label="Previous">‹</button>
+          <div class="slides" id="slides">
+            <article class="slide card">
+              <p>“I didn’t know email could feel like this. It’s actually fun.”</p>
+              <div class="who">— Kai, student</div>
+            </article>
+            <article class="slide card">
+              <p>“Markdown + command palette = bliss. I fly through my inbox.”</p>
+              <div class="who">— Mira, indie dev</div>
+            </article>
+            <article class="slide card">
+              <p>“The little animations keep me in flow without distraction.”</p>
+              <div class="who">— Diego, designer</div>
+            </article>
+            <article class="slide card">
+              <p>“Works on my spotty train Wi‑Fi. Offline FTW.”</p>
+              <div class="who">— Hana, journalist</div>
+            </article>
+          </div>
+          <button class="slider-nav next" aria-label="Next">›</button>
+        </div>
+      </section>
+
+      <section id="pricing" class="section pricing">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="title">Simple, fair pricing</h2>
+            <p class="subtitle">Pay monthly or save with yearly.</p>
+          </header>
+          <div class="billing-toggle">
+            <span>Monthly</span>
+            <label class="switch">
+              <input type="checkbox" id="billingSwitch" aria-label="Toggle billing period">
+              <span class="slider-round"></span>
+            </label>
+            <span>Yearly <strong class="save">save 20%</strong></span>
+          </div>
+          <div class="pricing-grid">
+            <article class="price-card card">
+              <h3>Solo</h3>
+              <div class="price"><span id="priceSolo">$6</span><small>/mo</small></div>
+              <ul class="features">
+                <li>1 account</li>
+                <li>Markdown composer</li>
+                <li>500MB attachments</li>
+              </ul>
+              <button class="button primary">Start</button>
+            </article>
+            <article class="price-card card highlighted">
+              <h3>Studio</h3>
+              <div class="price"><span id="priceStudio">$12</span><small>/mo</small></div>
+              <ul class="features">
+                <li>Up to 3 accounts</li>
+                <li>Custom rules</li>
+                <li>2GB attachments</li>
+              </ul>
+              <button class="button primary">Choose</button>
+            </article>
+            <article class="price-card card">
+              <h3>Team</h3>
+              <div class="price"><span id="priceTeam">$24</span><small>/mo</small></div>
+              <div class="seats">
+                <label for="seatRange">Seats</label>
+                <input id="seatRange" type="range" min="3" max="20" value="5">
+                <span id="seatValue">5</span>
+              </div>
+              <ul class="features">
+                <li>Shared labels</li>
+                <li>Admin controls</li>
+                <li>5GB attachments</li>
+              </ul>
+              <button class="button primary">Contact</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="cta" class="section cta">
+        <div class="container cta-inner">
+          <h2 class="title">Own your inbox vibe</h2>
+          <p class="subtitle">Pick your accent. Build your flow. Find your speed.</p>
+          <a class="button primary large" href="#playground">Try the Playground</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="brand-row">
+          <img class="brand-mark" src="/assets/logo.svg" alt="ZhangYang.Email logo" width="24" height="24" loading="lazy">
+          <span class="brand-name">ZhangYang.Email</span>
+        </div>
+        <nav class="footer-nav">
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#stories">Stories</a>
+          <a href="#playground">Playground</a>
+        </nav>
+        <div class="legal">© <span id="year"></span> ZhangYang.Email. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <dialog id="commandPalette" class="palette">
+      <form method="dialog" class="palette-inner">
+        <input id="paletteInput" class="input large" placeholder="Type a command or search… (ESC to close)">
+        <ul id="paletteResults" class="palette-results"></ul>
+      </form>
+    </dialog>
+
+    <noscript>
+      <div class="noscript">This site is highly interactive. Please enable JavaScript to experience it fully.</div>
+    </noscript>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script type="module" defer src="/scripts/app.js"></script>
+  </body>
+  </html>
